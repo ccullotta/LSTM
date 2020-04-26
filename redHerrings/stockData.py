@@ -1,13 +1,4 @@
-def getDailyStockHistory(symbol, qty):
-    data = {
-        "function":"TIME_SERIES_DAILY_ADJUSTED",
-        "symbol":symbol,
-        "outputsize":qty,
-        "apikey": STOCK_DATA_KEY
-    }
-    r = requests.get(STOCK_DATA_URL, params=data)
-    # print(r)
-    return json.loads(r.content)
+
 
 def getDividend(symbol):
     url = STOCK_DIVIDEND_URL+symbol+'/dividends/1y'+"?token="+STOCK_DIVIDEND_KEY
